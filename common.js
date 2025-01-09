@@ -1,4 +1,3 @@
-const numbersForm = document.getElementById("numbergrid");
 function setupGridControls(containerId, gridContainerId) {
     const controlsContainer = document.getElementById(containerId);
 
@@ -6,9 +5,6 @@ function setupGridControls(containerId, gridContainerId) {
     const label = document.createElement("label");
     label.textContent = "How many numbers in the grid? ";
 
-function createNumberGrid(min, max) {
-    const minNr = min;
-    const maxNr = max;
     // Skapa inputfält
     const input = document.createElement("input");
     input.type = "number";
@@ -35,13 +31,6 @@ function createNumberGrid(min, max) {
     controlsContainer.appendChild(button);
 }
 
-for (let i = 0; i < maxNr; i++) {
-    const randomNumberGrid = Math.floor(Math.random() * (maxNr - minNr)) + minNr;
-    const gridCell = document.createElement("div");
-    gridCell.classList.add("gridCell");
-    gridCell.textContent = randomNumberGrid;
-    cellNumberArray.push(randomNumberGrid);
-    gridWrapper.appendChild(gridCell);
 // Funktion för att skapa griden
 function createNumberGrid(gridSize, gridContainerId) {
     const gridContainer = document.getElementById(gridContainerId);
@@ -55,9 +44,7 @@ function createNumberGrid(gridSize, gridContainerId) {
     }
 }
 
-function createRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}// Initiera kontroller när sidan laddas
+// Initiera kontroller när sidan laddas
 document.addEventListener("DOMContentLoaded", () => {
     setupGridControls("controlsContainer", "numbergrid");
 });
