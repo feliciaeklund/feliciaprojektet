@@ -42,8 +42,22 @@ for (let i = 0; i < maxNr; i++) {
     gridCell.textContent = randomNumberGrid;
     cellNumberArray.push(randomNumberGrid);
     gridWrapper.appendChild(gridCell);
+// Funktion för att skapa griden
+function createNumberGrid(gridSize, gridContainerId) {
+    const gridContainer = document.getElementById(gridContainerId);
+    gridContainer.innerHTML = ""; // Rensa eventuell gammal grid
+
+    for (let i = 0; i < gridSize; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("gridCell");
+        cell.textContent = Math.floor(Math.random() * 100); // Slumptal mellan 0-99
+        gridContainer.appendChild(cell);
+    }
 }
 
 function createRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
-}
+}// Initiera kontroller när sidan laddas
+document.addEventListener("DOMContentLoaded", () => {
+    setupGridControls("controlsContainer", "numbergrid");
+});
