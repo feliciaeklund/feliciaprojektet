@@ -15,3 +15,12 @@
 
         allCells.forEach(cell => gridNumbers.add(parseInt(cell.textContent)));
 
+    document.querySelector('button').addEventListener('click', () => {
+        setTimeout(() => {
+            findMostRepeatedNumbers();
+            findNumbersNotInPlace();
+        }, 100);
+    });
+});
+
+
