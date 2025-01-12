@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.getElementById("numbergrid");
     const messageElement = document.getElementById("message"); // Använd ID för att identifiera elementet
     const resetButton = document.querySelector(".resetbutton");
