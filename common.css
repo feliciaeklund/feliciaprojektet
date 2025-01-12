@@ -33,6 +33,12 @@ main {
     margin: 20px;
 }
 
+
+input[type=number] { appearance: textfield; }
+
+input {
+    width: 50px;
+}
 .textcontainer {
         display: flex;
         align-items: center;
