@@ -2,6 +2,11 @@
     const addupInput = document.getElementById("addupinput");
     const findButton = document.getElementById("findButton");
 
+    findButton.addEventListener("click", () => {
+        const targetSum = parseInt(addupInput.value);
+        const allCells = document.querySelectorAll(".gridCell");
+        let found = false;
+
         allCells.forEach(cell => cell.classList.remove("marked")); // Rensa tidigare markeringar
 
         for (let i = 0; i < allCells.length; i++) {
