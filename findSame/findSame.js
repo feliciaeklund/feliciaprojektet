@@ -1,3 +1,6 @@
+    const gridContainer = document.getElementById("numbergrid");
+    const messageElement = document.getElementById("message"); // Använd ID för att identifiera elementet
+    const resetButton = document.querySelector(".resetbutton");
 
     resetButton.addEventListener("click", () => {
         const allCells = document.querySelectorAll(".gridCell");
