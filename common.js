@@ -47,4 +47,10 @@ function createNumberGrid(gridSize, gridContainerId) {
 // Initiera kontroller när sidan laddas
 document.addEventListener("DOMContentLoaded", () => {
     setupGridControls("controlsContainer", "numbergrid");
+    // Skapa länken för home-knappen
+    const homeButtonDiv = document.querySelector('.homebutton');
+    const homeLink = document.createElement('a');
+    homeLink.href = '../index.html'; // Använd relativ sökväg för att länka till index.html från mappar
+    homeLink.textContent = 'Home'; // Texten som visas
+    homeButtonDiv.appendChild(homeLink);
 });
