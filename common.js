@@ -9,7 +9,7 @@ function setupGridControls(containerId, gridContainerId) {
     const input = document.createElement("input");
     input.type = "number";
     input.min = 1; // Lägsta antal nummer
-    input.value = 10; // Standardvärde
+    input.value = 95; // Standardvärde
 
     // Skapa knappen
     const button = document.createElement("button");
