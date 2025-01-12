@@ -2,6 +2,7 @@
     const addupInput = document.getElementById("addupinput");
     const findButton = document.getElementById("findButton");
 
+        allCells.forEach(cell => cell.classList.remove("marked")); // Rensa tidigare markeringar
 
         for (let i = 0; i < allCells.length; i++) {
             const num1 = parseInt(allCells[i].textContent);
