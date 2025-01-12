@@ -13,6 +13,11 @@
         markedCells.forEach(cell => {
             markedSum += parseInt(cell.textContent);
         });
+
+        // Uppdatera inputfältet baserat på om det finns markerade celler eller inte
+        sumInput.value = markedCells.length ? markedSum : '-';
+    }
+
     // Funktion för att summera alla nummer i griden
     function sumAllNumbers() {
         const allCells = document.querySelectorAll('.gridCell');
@@ -25,3 +30,22 @@
         console.log("Total sum of all numbers:", totalSum); // Logg för felsökning
         sumofall.value = totalSum; // Uppdatera inputfältet med total summa
     }
+
+    // Funktionen för att återställa markerade nummer
+    function resetMarked() {
+        const markedCells = document.querySelectorAll('.gridCell.marked');
+
+        markedCells.forEach(cell => {
+            cell.classList.remove('marked');
+        });
+
+        sumInput.value = "-"; // Återställ summan
+    }
+
+    // Lägg till event listener för reset-knappen
+    resetButton.addEventListener('click', resetMarked);
+
+
+    // Initialisera inputfältet med "-"
+    sumInput.value = "-";
+});
