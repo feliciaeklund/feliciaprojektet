@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const resetButton = document.querySelector(".resetbutton");
+    const gridContainer = document.getElementById("numbergrid");
+    const sumofall = document.getElementById("numberinput"); // Kontrollera att detta ID är korrekt
+    const sumInput = document.getElementById('suminput'); // Inputfältet för summan
+
     // Funktionen för att markera nummer
     function markNumber(event) {
         const cell = event.target;
