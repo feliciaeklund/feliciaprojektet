@@ -2,6 +2,14 @@
     const messageElement = document.getElementById("message"); // Använd ID för att identifiera elementet
     const resetButton = document.querySelector(".resetbutton");
 
+    // Kontrollera att elementet hittas
+    if (!messageElement) {
+        console.error("Message element not found");
+        return;
+    }
+
+    console.log("Message element found:", messageElement);
+
     gridContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("gridCell")) {
             const number = event.target.textContent;
