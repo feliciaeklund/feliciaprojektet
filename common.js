@@ -1,3 +1,5 @@
+const gridcellarray = [];
+
 function setupGridControls(containerId, gridContainerId) {
     const controlsContainer = document.getElementById(containerId);
 
@@ -39,14 +41,18 @@ function createNumberGrid(gridSize, gridContainerId) {
     for (let i = 0; i < gridSize; i++) {
         const cell = document.createElement("div");
         cell.classList.add("gridCell");
-        cell.textContent = Math.floor(Math.random() * 100); // Slumptal mellan 0-99
+        const number = Math.floor(Math.random() * 100); // Slumptal mellan 0-99
+        cell.textContent = number;
         gridContainer.appendChild(cell);
+        gridcellarray.push(number);
     }
 }
 
-// Initiera kontroller när sidan laddas
+// Initiera kontroller och lägg till event listener för reset-knappen när sidan laddas
 document.addEventListener("DOMContentLoaded", () => {
     setupGridControls("controlsContainer", "numbergrid");
+    createNumberGrid(95, "numbergrid"); // Skapa griden med 95 siffror som standard
+
     // Skapa länken för home-knappen
     const homeButtonDiv = document.querySelector('.homebutton');
     const homeLink = document.createElement('a');

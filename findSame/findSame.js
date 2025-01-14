@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Message element found:", messageElement);
 
+    // Dynamiskt skapa några grid celler för test
+    for (let i = 0; i < 20; i++) {
+        const cell = document.createElement("div");
+        cell.className = "gridCell";
+        cell.textContent = Math.floor(Math.random() * 100);
+        gridContainer.appendChild(cell);
+    }
+
     gridContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("gridCell")) {
             const number = event.target.textContent;

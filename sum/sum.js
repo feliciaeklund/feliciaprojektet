@@ -51,6 +51,17 @@ document.addEventListener("DOMContentLoaded", function() {
     // Lägg till event listener för reset-knappen
     resetButton.addEventListener('click', resetMarked);
 
+    // Lägg till event listener för grid-klick
+    gridContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains("gridCell")) {
+            markNumber(event);
+        }
+    });
+
+    // Summera alla nummer när griden skapas
+    document.querySelector('button').addEventListener('click', () => {
+        setTimeout(sumAllNumbers, 100); // Vänta tills griden är skapad
+    });
 
     // Initialisera inputfältet med "-"
     sumInput.value = "-";
