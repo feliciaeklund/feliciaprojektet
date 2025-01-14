@@ -37,11 +37,21 @@ main {
     border-radius: 10px;
 }
 
+.gridCell.marked {
+    background-color: lightgreen;
+}
+
 #wrapper {
     text-align: center;
     margin: 20px;
 }
 
+#controlsContainer {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
 input[type=number] { appearance: textfield; }
 
