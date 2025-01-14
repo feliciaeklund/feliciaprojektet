@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Noto-Sans;
+    src: url(Noto_Sans/NotoSans_Condensed-Regular.ttf);
+}
+
+body {
+    font-family: Noto-Sans;
+}
+
 main {
     display: flex;
     justify-content: center;
