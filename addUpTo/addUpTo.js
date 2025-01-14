@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const allCells = document.querySelectorAll(".gridCell");
         let found = false;
 
-        allCells.forEach(cell => cell.classList.remove("marked")); // Rensa tidigare markeringar
+        allCells.forEach(cell => cell.classList.remove("marked")); 
 
         for (let i = 0; i < allCells.length; i++) {
             const num1 = parseInt(allCells[i].textContent);

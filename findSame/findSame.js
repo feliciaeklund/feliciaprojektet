@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.getElementById("numbergrid");
-    const messageElement = document.getElementById("message"); // Använd ID för att identifiera elementet
+    const messageElement = document.getElementById("message"); 
     const resetButton = document.querySelector(".resetbutton");
 
-    // Kontrollera att elementet hittas
     if (!messageElement) {
         console.error("Message element not found");
         return;
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Message element found:", messageElement);
 
-    // Dynamiskt skapa några grid celler för test
     for (let i = 0; i < 20; i++) {
         const cell = document.createElement("div");
         cell.className = "gridCell";

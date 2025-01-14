@@ -3,60 +3,54 @@ const gridcellarray = [];
 function setupGridControls(containerId, gridContainerId) {
     const controlsContainer = document.getElementById(containerId);
 
-    // Skapa text
+ 
     const label = document.createElement("label");
     label.textContent = "How many numbers in the grid? ";
 
-    // Skapa inputfält
+
     const input = document.createElement("input");
     input.type = "number";
-    input.min = 1; // Lägsta antal nummer
-    input.value = 95; // Standardvärde
+    input.min = 1; 
+    input.value = 95; 
 
-    // Skapa knappen
     const button = document.createElement("button");
     button.textContent = "Create";
 
-    // Lägg till en klickhändelse på knappen
     button.addEventListener("click", () => {
         const gridSize = parseInt(input.value);
         if (isNaN(gridSize) || gridSize <= 0) {
             alert("Please enter a valid number greater than 0.");
             return;
         }
-        createNumberGrid(gridSize, gridContainerId); // Skapa griden
+        createNumberGrid(gridSize, gridContainerId); 
     });
 
-    // Lägg till elementen i container
     controlsContainer.appendChild(label);
     controlsContainer.appendChild(input);
     controlsContainer.appendChild(button);
 }
 
-// Funktion för att skapa griden
 function createNumberGrid(gridSize, gridContainerId) {
     const gridContainer = document.getElementById(gridContainerId);
-    gridContainer.innerHTML = ""; // Rensa eventuell gammal grid
+    gridContainer.innerHTML = ""; 
 
     for (let i = 0; i < gridSize; i++) {
         const cell = document.createElement("div");
         cell.classList.add("gridCell");
-        const number = Math.floor(Math.random() * 100); // Slumptal mellan 0-99
+        const number = Math.floor(Math.random() * 100); 
         cell.textContent = number;
         gridContainer.appendChild(cell);
         gridcellarray.push(number);
     }
 }
 
-// Initiera kontroller och lägg till event listener för reset-knappen när sidan laddas
 document.addEventListener("DOMContentLoaded", () => {
     setupGridControls("controlsContainer", "numbergrid");
-    createNumberGrid(95, "numbergrid"); // Skapa griden med 95 siffror som standard
+    createNumberGrid(95, "numbergrid"); 
 
-    // Skapa länken för home-knappen
     const homeButtonDiv = document.querySelector('.homebutton');
     const homeLink = document.createElement('a');
-    homeLink.href = '../index.html'; // Använd relativ sökväg för att länka till index.html från mappar
-    homeLink.textContent = 'Home'; // Texten som visas
+    homeLink.href = '../index.html'; 
+    homeLink.textContent = 'Home'; 
     homeButtonDiv.appendChild(homeLink);
 });

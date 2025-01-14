@@ -32,7 +32,6 @@ main {
     line-height: 50px;
     text-align: center;
     background-color: lightgray;
-    cursor: pointer;
     font-size: 18px;
     border-radius: 10px;
 }

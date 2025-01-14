@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.getElementById("numbergrid");
     const fillClearedButton = document.getElementById("fillClearedButton");
 
-    // När musen hovrar över en cell
     gridContainer.addEventListener("mouseover", (event) => {
         if (event.target.classList.contains("gridCell")) {
             if (event.target.classList.contains("cleared")) {
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // När musen lämnar en cell
     gridContainer.addEventListener("mouseout", (event) => {
         if (event.target.classList.contains("gridCell")) {
             if (event.target.classList.contains("cleared")) {
@@ -24,22 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // När en cell klickas
     gridContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("gridCell")) {
-            event.target.textContent = ""; // Dölj numret
+            event.target.textContent = ""; 
             event.target.style.backgroundColor = "orange";
             event.target.classList.add("cleared");
         }
     });
 
-    // När knappen "Fill Cleared" klickas
     fillClearedButton.addEventListener("click", () => {
         const clearedCells = document.querySelectorAll(".gridCell.cleared");
         clearedCells.forEach(cell => {
             cell.style.backgroundColor = "lightgray";
             cell.classList.remove("cleared");
-            cell.textContent = Math.floor(Math.random() * 100); // Återställ numren
+            cell.textContent = Math.floor(Math.random() * 100); 
         });
     });
 });

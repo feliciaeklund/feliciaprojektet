@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Object.entries(numberCounts).forEach(([number, count]) => {
             if (count > 1) {
                 repeatedNumbers.push(number);
-                totalRepetitions += count; // Lägg till antalet repetitioner
+                totalRepetitions += count; 
                 allCells.forEach(cell => {
                     if (parseInt(cell.textContent) === parseInt(number)) {
                         cell.style.backgroundColor = 'lightblue';
